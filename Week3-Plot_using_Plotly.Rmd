@@ -1,0 +1,45 @@
+---
+title: "Web page presentation - Plot created with Plotly"
+author: "Leena Sonpethkar"
+date: "January 31, 2021"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## R Markdown Presentation & Plotly
+### Instructions
+- Create a web page presentation using R Markdown that features a plot created with Plotly. - Host your webpage on either GitHub Pages, RPubs, or NeoCities. 
+- Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. 
+
+### Review criteria
+The rubric contains the following two questions:
+
+- Does the web page feature a date and is this date less than two months before the date that you're grading this assignment?
+- Is the web page a presentation and does it feature an interactive plot that appears to have been created with Plotly?
+
+## Submission
+```{r, echo = TRUE}
+library(plotly)
+library(ggplot2)
+library(tidyr)
+
+
+data(diamonds)
+
+dfDiamond <- diamonds %>%
+              group_by(cut, color) %>%
+              summarise(price = sum(price))
+
+Sys.setenv("plotly_username"="leena-sonpethkar")
+Sys.setenv("plotly_api_key"="OAPcWxwCLiUGNyeYvwGY")
+
+pl <- plot_ly(dfDiamond, x = ~color, y = ~price, color = ~cut, type="bar") %>% 
+      layout(title = "Diamond price based on Cut by Colors", xaxis=list(title="Cut"), yaxis=list(title="Price"))
+
+pl
+```
+
+## Thanks
