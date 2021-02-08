@@ -1,3 +1,10 @@
+##################################################################################
+# Author: Leena Sonpethkar
+# Date: 05-Feb-2021
+# Filename: server.R
+# Description: Developing Data Products - Week4 course project Shiny Application
+##################################################################################
+
 library(shiny)
 
 shinyServer(function(input, output) {
