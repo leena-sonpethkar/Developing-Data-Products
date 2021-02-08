@@ -1,0 +1,54 @@
+---
+title: "Developing Data Products - Course Project: Shiny Application and Reproducible Pitch"
+author: "Leena Sonpethkar"
+date: "February 5, 2021"
+output: slidy_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Overview
+
+This is an RStudio shiny application developed as a part of final project in the Developing Data Products course in Coursera Data Science Specialization track.
+
+This project uses the "swiss" dataset. This data is about Standardized fertility measure and socio-economic indicators for each of 47 French-speaking provinces of Switzerland at about 1888.
+
+Using "Swiss" data, this application shows relationship between:
+
+- Fertility And Agriculture 
+- Fertility And Education
+
+## How it works
+
+User can show/hide plot using check box on left side panel
+
+- Show Fertility on Agriculture Plot
+- Show Fertility on Education Plot
+
+Slider bars for "Agriculture" and "Education" are given to predict the "Fertility" value
+Predicted values will be printed, below the plot on the right hand side panel. 
+
+**Note: If the check box is NOT selected, neither plot nor predicted value will be printed**
+
+## Application & Source Code Details  
+
+- Source Code can be found at: 
+- Application is Deployed at: https://leena-sonpethkar.shinyapps.io/Week4Project/
+
+## Application widgets used
+
+This application uses widgets listed below:
+
+- sliderInput: 
+1. First slider is to choose the Agriculture value (in %) 
+2. Second slider is to choose the Education value (in %)
+
+- checkboxInput: 
+1. First checkbox to show/hide: Fertility & Agriculture plot and predicted value of Fertility based on Agriculture% 
+1. Second checkbox to show/hide: Fertility & Education plot and predicted value of Fertility based on Education% 
+
+- submitButton: An Submit Button, to take action based on values selected by User.
+
+
